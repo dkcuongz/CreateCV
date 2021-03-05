@@ -1,0 +1,65 @@
+[v-cloak] {
+  display:none;
+}
+html {
+  scrollbar-color: #d2ecfc #ffffff;
+  scrollbar-width: thin !important;
+}
+body {
+  font-size: 1rem;
+  min-width: 1366px;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.uk-card-default {
+  color: #575757;
+}
+body,
+.uk-navbar-item,
+.uk-navbar-nav > li > a,
+.uk-navbar-toggle,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
+    メイリオ, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック", "MS Gothic",
+    "Noto Sans CJK JP", TakaoPGothic, Arial, Helvetica, sans-serif !important;
+}
+.el-step:hover .el-step__head .el-step__icon, .el-step:hover .el-step__main {
+  transition: transform 0.3s ease;
+  transform: scale(1.1);
+  transform-origin: center;
+}
+.el-step .el-step__head .el-step__icon, .el-step .el-step__main {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+.el-step .el-step__head.is-process .el-step__icon, .el-step .el-step__head.is-process + .el-step__main {
+  transition: transform 0.3s ease;
+  transform: scale(1.3);
+  transform-origin: center;
+}
+.el-step .el-step__head.is-process .el-step__icon, .el-step .el-step__head.is-process + .el-step__main, .el-step .el-step__head.is-process .el-step__icon .el-step__title, .el-step .el-step__head.is-process + .el-step__main .el-step__title, .el-step .el-step__head.is-process .el-step__icon .el-step__description, .el-step .el-step__head.is-process + .el-step__main .el-step__description {
+  color: #3b76c4 !important;
+  font-weight: 600;
+}
+.el-step .el-step__head.is-process .el-step__icon .el-step__description, .el-step .el-step__head.is-process + .el-step__main .el-step__description {
+  font-size: 10px;
+}
+.el-step__icon-inner {
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 50%;
+}
+.el-step__main {
+  margin-top: 10px;
+}
