@@ -92,8 +92,8 @@ h6 {
 }
 
 .input-csv {
-  width: 200px !important;
   border-radius: 10px;
+  height: 40px;
 }
 
 .el-step__icon {
@@ -191,4 +191,36 @@ h6 {
     -webkit-transform: translateY(0);
     transform: translateY(0)
   }
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.uk-card-body {
+  padding: 20px 40px;
+}
+.button-submit {
+  background-color: #e3165c;
+  color: white;
+}
+.el-card__footer {
+  border-top: 1px solid #ebeef5;
+}
+.col-width-12 {
+  width: 200px !important;
+}
+.col-width-8 {
+  width: 95px !important;
+}
+.col-width-4 {
+  width: 80px !important;
+}
+.label-radio {
+  padding: 5px;
+  font-size: 1rem;
+}
+.box-card {
+  width: 640px;
+}
+.el-form-item__label {
+  padding: 5px 0 0 0 !important;
 }
