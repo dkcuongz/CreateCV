@@ -12,11 +12,11 @@
       ></el-step>
     </el-steps>
     <div v-if="active === 0" class="uk-margin-top uk-flex uk-flex-center">
-      <div class="uk-card uk-card-default uk-width-1-2@m">
-        <div class="uk-card-header">
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
           <div class="uk-grid-small uk-flex-middle" uk-grid>
             <div class="uk-width-expand">
-              <h3 class="uk-card-title uk-margin-remove-bottom">
+              <h3 class="uk-card-title uk-margin-remove-bottom card-title">
                 プロフィールを入力
               </h3>
               <p class="uk-text-meta uk-margin-remove-top">
@@ -25,91 +25,88 @@
             </div>
           </div>
         </div>
-        <div class="uk-card-body">
-          <form class="uk-form-stacked">
-            <div class="uk-margin">
-              <label class="uk-form-label" for="form-stacked-text">氏名</label>
-              <div class="uk-form-controls uk-flex">
-                <input
-                  class="uk-input input-csv uk-margin-right"
-                  id="form-stacked-text"
-                  type="text"
-                />
-                <input
-                  class="uk-input input-csv"
-                  id="form-stacked-text"
-                  type="text"
-                />
-              </div>
-            </div>
-
-            <div class="uk-margin">
-              <label class="uk-form-label" for="form-stacked-text">ふりがな</label>
-              <div class="uk-form-controls uk-flex">
-                <input
-                  class="uk-input input-csv uk-margin-right"
-                  id="form-stacked-text"
-                  type="text"
-                />
-                <input
-                  class="uk-input input-csv"
-                  id="form-stacked-text"
-                  type="text"
-                />
-              </div>
-            </div>
-
-            <div class="uk-margin">
-              <label class="uk-form-label" for="form-stacked-text">生年月日</label>
-              <div class="uk-form-controls uk-flex">
-                <input
-                  style="width: 62px !important"
-                  class="uk-input input-csv"
-                  id="form-stacked-text"
-                  type="text"
-                  placeholder="2000"
-                />
-                <span style="line-height: 40px; padding: 0 5px 0 5px">年</span>
-                <input
-                  style="width: 40px !important"
-                  class="uk-input input-csv"
-                  id="form-stacked-text"
-                  type="text"
-                  placeholder="12"
-                />
-                <span style="line-height: 40px; padding: 0 5px 0 5px">月</span>
-                <input
-                  style="width: 40px !important"
-                  class="uk-input input-csv"
-                  id="form-stacked-text"
-                  type="text"
-                  placeholder="31"
-                />
-                <span style="line-height: 40px; padding: 0 5px 0 5px">日</span>
-              </div>
-            </div>
-
-            <div class="uk-margin">
-              <div class="uk-form-label">Radio</div>
-              <div class="uk-form-controls">
-                <label
-                  ><input class="uk-radio" type="radio" name="radio1" /> Option
-                  01</label
-                ><br />
-                <label
-                  ><input class="uk-radio" type="radio" name="radio1" /> Option
-                  02</label
+          <el-form
+            label-position="top"
+            label-width="100px"
+            size="medium"
+          >
+            <el-form-item label="氏名" class="uk-margin-remove">
+              <el-row>
+                <el-col :span="12" class="col-width-12 uk-margin-right"
+                  ><el-input v-model="text1" class="input-csv"></el-input
+                ></el-col>
+                <el-col :span="12" class="col-width-12"
+                  ><el-input v-model="text2" class="input-csv"></el-input
+                ></el-col>
+              </el-row>
+            </el-form-item>
+            <el-form-item label="ふりがな" class="uk-margin-remove">
+              <el-row>
+                <el-col :span="12" class="col-width-12 uk-margin-right"
+                  ><el-input v-model="text3" class="input-csv"></el-input
+                ></el-col>
+                <el-col :span="12" class="col-width-12"
+                  ><el-input v-model="text4" class="input-csv"></el-input
+                ></el-col>
+              </el-row>
+            </el-form-item>
+            <el-form-item label="生年月日" class="uk-margin-remove">
+              <el-row>
+                <el-col :span="8" class="col-width-8"
+                  ><el-input v-model="text5" class="input-csv"
+                  placeholder="2000" style="width: 70px"></el-input>
+                  <span style="line-height: 32px; padding: 0 5px 0 5px"
+                    >年</span
+                  ></el-col
                 >
-              </div>
-            </div>
-          </form>
+                <el-col :span="8" class="col-width-4"
+                  ><el-input v-model="text6" style="width: 55px"
+                  placeholder="12" class="input-csv"></el-input>
+                  <span style="line-height: 32px; padding: 0 5px 0 5px"
+                    >月</span
+                  ></el-col
+                >
+                <el-col :span="8"
+                  ><el-input v-model="text7" style="width: 55px"
+                  placeholder="31" class="input-csv"></el-input>
+                  <span style="line-height: 32px; padding: 0 5px 0 5px"
+                    >日</span
+                  ></el-col
+                >
+              </el-row>
+            </el-form-item>
+            <el-form-item label="年齢" class="uk-margin-remove">
+              <el-row>
+                <el-col :span="24"
+                  ><el-input v-model="text8" style="width: 70px" class="input-csv"></el-input>
+                  <span style="line-height: 32px; padding: 0 5px 0 5px"
+                    >歳</span
+                  ></el-col
+                >
+              </el-row>
+            </el-form-item>
+            <el-form-item label="性別" class="uk-margin-remove">
+              <el-radio-group v-model="radio">
+                <el-radio class="label-radio" label="男性"></el-radio> <br/>
+                <el-radio class="label-radio" label="女性"></el-radio> <br/>
+                <el-radio class="label-radio" label="記入しない >"></el-radio> <br/>
+                <el-radio class="label-radio" label="表示しない"></el-radio> <br/>
+              </el-radio-group>
+            </el-form-item>
+          </el-form>
+        <div
+          class="el-card__footer uk-flex uk-flex-right"
+          style="padding-top: 15px"
+        >
+          <el-button type="danger" @click="active += 1" class="button-submit"
+            >次へ <i class="el-icon-d-arrow-right"></i
+          ></el-button>
         </div>
-        <div class="uk-card-footer">
-          <a href="#" class="uk-button uk-button-text">Read more</a>
-        </div>
-      </div>
+      </el-card>
     </div>
-    <div v-if="active === 1">step 2</div>
+    <div v-if="active === 1" class="uk-margin-top uk-flex uk-flex-center">
+      steps 2
+    </div>
   </div>
 </template>
 
@@ -117,6 +114,15 @@
 export default {
   data() {
     return {
+      text1: '',
+      text2: '',
+      text3: '',
+      text4: '',
+      text5: '',
+      text6: '',
+      text7: '',
+      text8: '',
+      radio: '',
       active: 0,
       steps: [
         {
