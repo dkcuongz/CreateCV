@@ -35,11 +35,7 @@
                   id="form-stacked-text"
                   type="text"
                 />
-                <input
-                  class="uk-input input-csv"
-                  id="form-stacked-text"
-                  type="text"
-                />
+                <input class="uk-input input-csv" id="form-stacked-text" type="text" />
               </div>
             </div>
 
@@ -51,11 +47,7 @@
                   id="form-stacked-text"
                   type="text"
                 />
-                <input
-                  class="uk-input input-csv"
-                  id="form-stacked-text"
-                  type="text"
-                />
+                <input class="uk-input input-csv" id="form-stacked-text" type="text" />
               </div>
             </div>
 
@@ -92,14 +84,8 @@
             <div class="uk-margin">
               <div class="uk-form-label">Radio</div>
               <div class="uk-form-controls">
-                <label
-                  ><input class="uk-radio" type="radio" name="radio1" /> Option
-                  01</label
-                ><br />
-                <label
-                  ><input class="uk-radio" type="radio" name="radio1" /> Option
-                  02</label
-                >
+                <label><input class="uk-radio" type="radio" name="radio1" /> Option 01</label><br />
+                <label><input class="uk-radio" type="radio" name="radio1" /> Option 02</label>
               </div>
             </div>
           </form>
@@ -110,6 +96,41 @@
       </div>
     </div>
     <div v-if="active === 1">step 2</div>
+    <div v-if="active === 11" class="uk-margin-top uk-flex uk-flex-center">
+      <div class="uk-card uk-card-default uk-width-1-2@m">
+        <div class="uk-card-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-expand">
+              <h3 class="uk-card-title uk-margin-remove-bottom">
+                ダウンロード
+              </h3>
+              <p class="uk-text-meta uk-margin-remove-top">
+                作成した履歴書をPDFでダウンロードします
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="uk-card-body">
+          <div class="fluffy">
+            <div class="your-yagi">
+              <div class="message-placement">
+                <div class="fixed message">
+                  さいごまでがんばった！
+                </div>
+              </div>
+              <div class="image-area"><ruby title="なまえをかえられるよ"> </ruby></div>
+            </div>
+          </div>
+          <el-form ref="form" :model="form" label-width="120px">
+            <el-button type="danger" icon="el-icon-download"
+            class="uk-align-center"> ダウンロードする </el-button>
+          </el-form>
+        </div>
+        <div class="uk-card-footer">
+          <a href="#" class="uk-button uk-button-text">Read more</a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
