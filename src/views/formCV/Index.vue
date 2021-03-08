@@ -1,5 +1,5 @@
 <template>
-  <div class="uk-container">
+  <div class="uk-container fullscreen">
     <el-steps :active="active" finish-status="success" align-center>
       <el-step
         class="uk-margin-top"
@@ -25,79 +25,76 @@
             </div>
           </div>
         </div>
-          <el-form
-            label-position="top"
-            label-width="100px"
-            size="medium"
-          >
-            <el-form-item label="氏名" class="uk-margin-remove">
-              <el-row>
-                <el-col :span="12" class="col-width-12 uk-margin-right"
-                  ><el-input v-model="text1" class="input-csv"></el-input
-                ></el-col>
-                <el-col :span="12" class="col-width-12"
-                  ><el-input v-model="text2" class="input-csv"></el-input
-                ></el-col>
-              </el-row>
-            </el-form-item>
-            <el-form-item label="ふりがな" class="uk-margin-remove">
-              <el-row>
-                <el-col :span="12" class="col-width-12 uk-margin-right"
-                  ><el-input v-model="text3" class="input-csv"></el-input
-                ></el-col>
-                <el-col :span="12" class="col-width-12"
-                  ><el-input v-model="text4" class="input-csv"></el-input
-                ></el-col>
-              </el-row>
-            </el-form-item>
-            <el-form-item label="生年月日" class="uk-margin-remove">
-              <el-row>
-                <el-col :span="8" class="col-width-8"
-                  ><el-input v-model="text5" class="input-csv"
-                  placeholder="2000" style="width: 70px"></el-input>
-                  <span style="line-height: 32px; padding: 0 5px 0 5px"
-                    >年</span
-                  ></el-col
-                >
-                <el-col :span="8" class="col-width-4"
-                  ><el-input v-model="text6" style="width: 55px"
-                  placeholder="12" class="input-csv"></el-input>
-                  <span style="line-height: 32px; padding: 0 5px 0 5px"
-                    >月</span
-                  ></el-col
-                >
-                <el-col :span="8"
-                  ><el-input v-model="text7" style="width: 55px"
-                  placeholder="31" class="input-csv"></el-input>
-                  <span style="line-height: 32px; padding: 0 5px 0 5px"
-                    >日</span
-                  ></el-col
-                >
-              </el-row>
-            </el-form-item>
-            <el-form-item label="年齢" class="uk-margin-remove">
-              <el-row>
-                <el-col :span="24"
-                  ><el-input v-model="text8" style="width: 70px" class="input-csv"></el-input>
-                  <span style="line-height: 32px; padding: 0 5px 0 5px"
-                    >歳</span
-                  ></el-col
-                >
-              </el-row>
-            </el-form-item>
-            <el-form-item label="性別" class="uk-margin-remove">
-              <el-radio-group v-model="radio">
-                <el-radio class="label-radio" label="男性"></el-radio> <br/>
-                <el-radio class="label-radio" label="女性"></el-radio> <br/>
-                <el-radio class="label-radio" label="記入しない >"></el-radio> <br/>
-                <el-radio class="label-radio" label="表示しない"></el-radio> <br/>
-              </el-radio-group>
-            </el-form-item>
-          </el-form>
-        <div
-          class="el-card__footer uk-flex uk-flex-right"
-          style="padding-top: 15px"
-        >
+        <el-form label-position="top" label-width="100px" size="medium">
+          <el-form-item label="氏名" class="uk-margin-remove">
+            <el-row>
+              <el-col :span="12" class="col-width-12 uk-margin-right"
+                ><el-input v-model="text1" class="input-csv"></el-input
+              ></el-col>
+              <el-col :span="12" class="col-width-12"
+                ><el-input v-model="text2" class="input-csv"></el-input
+              ></el-col>
+            </el-row>
+          </el-form-item>
+          <el-form-item label="ふりがな" class="uk-margin-remove">
+            <el-row>
+              <el-col :span="12" class="col-width-12 uk-margin-right"
+                ><el-input v-model="text3" class="input-csv"></el-input
+              ></el-col>
+              <el-col :span="12" class="col-width-12"
+                ><el-input v-model="text4" class="input-csv"></el-input
+              ></el-col>
+            </el-row>
+          </el-form-item>
+          <el-form-item label="生年月日" class="uk-margin-remove">
+            <el-row>
+              <el-col :span="8" class="col-width-8"
+                ><el-input
+                  v-model="text5"
+                  class="input-csv"
+                  placeholder="2000"
+                  style="width: 70px"
+                ></el-input>
+                <span style="line-height: 32px; padding: 0 5px 0 5px">年</span></el-col
+              >
+              <el-col :span="8" class="col-width-4"
+                ><el-input
+                  v-model="text6"
+                  style="width: 55px"
+                  placeholder="12"
+                  class="input-csv"
+                ></el-input>
+                <span style="line-height: 32px; padding: 0 5px 0 5px">月</span></el-col
+              >
+              <el-col :span="8"
+                ><el-input
+                  v-model="text7"
+                  style="width: 55px"
+                  placeholder="31"
+                  class="input-csv"
+                ></el-input>
+                <span style="line-height: 32px; padding: 0 5px 0 5px">日</span></el-col
+              >
+            </el-row>
+          </el-form-item>
+          <el-form-item label="年齢" class="uk-margin-remove">
+            <el-row>
+              <el-col :span="24"
+                ><el-input v-model="text8" style="width: 70px" class="input-csv"></el-input>
+                <span style="line-height: 32px; padding: 0 5px 0 5px">歳</span></el-col
+              >
+            </el-row>
+          </el-form-item>
+          <el-form-item label="性別" class="uk-margin-remove">
+            <el-radio-group v-model="radio">
+              <el-radio class="label-radio" label="男性"></el-radio> <br />
+              <el-radio class="label-radio" label="女性"></el-radio> <br />
+              <el-radio class="label-radio" label="記入しない >"></el-radio> <br />
+              <el-radio class="label-radio" label="表示しない"></el-radio> <br />
+            </el-radio-group>
+          </el-form-item>
+        </el-form>
+        <div class="el-card__footer uk-flex uk-flex-right" style="padding-top: 15px">
           <el-button type="danger" @click="active += 1" class="button-submit"
             >次へ <i class="el-icon-d-arrow-right"></i
           ></el-button>
@@ -109,39 +106,112 @@
     </div>
     <div v-if="active === 1">step 2</div>
     <div v-if="active === 11" class="uk-margin-top uk-flex uk-flex-center">
-      <div class="uk-card uk-card-default uk-width-1-2@m">
-        <div class="uk-card-header">
-          <div class="uk-grid-small uk-flex-middle" uk-grid>
-            <div class="uk-width-expand">
-              <h3 class="uk-card-title uk-margin-remove-bottom">
-                ダウンロード
-              </h3>
-              <p class="uk-text-meta uk-margin-remove-top">
-                作成した履歴書をPDFでダウンロードします
-              </p>
+      <div class=" uk-width-1-2">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove-bottom">
+                  ダウンロード
+                </h3>
+                <p class="uk-text-meta uk-margin-remove-top">
+                  作成した履歴書をPDFでダウンロードします
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="uk-card-body">
-          <div class="fluffy">
-            <div class="your-yagi">
-              <div class="message-placement">
-                <div class="fixed message">
-                  さいごまでがんばった！
+          <div class="uk-card-body">
+            <div class="fluffy">
+              <div class="your-yagi">
+                <div class="message-placement">
+                  <div class="fixed message">
+                    さいごまでがんばった！
+                  </div>
+                </div>
+                <div class="image-area"><ruby title="なまえをかえられるよ"> </ruby></div>
+              </div>
+            </div>
+            <el-form ref="form" :model="form" label-width="120px">
+              <div class="card-center uk-margin-top">
+                <el-button type="danger" icon="el-icon-download" class="uk-width-1-1 ">
+                  ダウンロードする
+                </el-button>
+                <p>
+                  ログインすると、他の端末からも続きを書けるようにデータをバックアップできます。<br />
+                  また、「コンビニ印刷」のサービスをご利用いただけます。
+                </p>
+                <div class="login">
+                  <el-button type="danger" plain class="uk-width-1-1 ">
+                    ご利用のGoogleアカウントでログインできます
+                  </el-button>
+                  <p class="uk-text-center uk-margin-small">
+                    ご利用のGoogleアカウントでログインできます
+                  </p>
+                  <div class="horizontal-text"><span>または</span></div>
+                  <el-input placeholder="SSCV@example.com" v-model="input"></el-input>
+                  <el-button
+                    type="danger"
+                    icon="el-icon-download"
+                    class="uk-width-1-1 uk-margin-top"
+                  >
+                    メールでリンクを送る
+                  </el-button>
+                  <p class="uk-margin-small">
+                    メールに届いたリンクをクリックするだけでかんたんにログインできます。
+                  </p>
                 </div>
               </div>
-              <div class="image-area"><ruby title="なまえをかえられるよ"> </ruby></div>
-            </div>
+            </el-form>
+            <el-collapse v-model="activeNames" @change="handleChange" class="uk-margin-large-top">
+              <el-collapse-item title="ヤギにはがきを渡す" name="1">
+                <div>
+                  Consistent with real life: in line with the process and logic of real life, and
+                  comply with languages and habits that the users are used to;
+                </div>
+                <div>
+                  Consistent within interface: all elements should be consistent, such as: design
+                  style, icons and texts, position of elements, etc.
+                </div>
+              </el-collapse-item>
+              <el-collapse-item title="スマホから履歴書を印刷するには" name="2">
+                <div>
+                  GoogleドライブやDropboxなどのクラウドストレージを使用するか、
+                  Gmail経由で自分宛てにPDFを送ってデータを保存します。印刷は自宅のプリンタまたはコンビニ印刷などをご利用下さい。
+                </div>
+                <div>
+                  コンビニ印刷のサービスご利用には、ログイン(無料)が必要になります。
+                </div>
+              </el-collapse-item>
+              <el-collapse-item title="他の端末から続きを書くには" name="3">
+                <div>Simplify the process: keep operating process simple and intuitive;</div>
+                <div>
+                  他の端末から続きを編集したい場合は、Googleアカウントでログインし「バックアップをとる」でデータを保存して続きを書くことができます。
+                  なお、会員登録していない状態でも、現在入力されている端末からであれば続きの入力ができます
+                  （ブラウザのデータを削除したり、端末を変更した場合はリセットされます）。
+                </div>
+              </el-collapse-item>
+            </el-collapse>
           </div>
-          <el-form ref="form" :model="form" label-width="120px">
-            <el-button type="danger" icon="el-icon-download"
-            class="uk-align-center"> ダウンロードする </el-button>
-          </el-form>
+          <div class="uk-card-footer">
+            <el-button
+              icon=" el-icon-d-arrow-left"
+              type="danger"
+              class="uk-width-1-5 button-submit"
+            >
+              前へ
+            </el-button>
+          </div>
         </div>
-        <div class="uk-card-footer">
-          <a href="#" class="uk-button uk-button-text">Read more</a>
+        <div class="text-right uk-margin-small">
+          <div class="save-time-message"><span>最終保存：</span><span>6時間前</span></div>
+        </div>
+        <div class="card-preview-button">
+          <el-button icon="el-icon-view" size="medium"> プレビュー</el-button>
         </div>
       </div>
+    </div>
+    <div class="uk-width-1-2 uk-margin-large-top uk-margin-bottom footer-cv">
+      <div class="image-area"><ruby title="なまえをかえられるよ"> </ruby></div>
     </div>
   </div>
 </template>
@@ -150,6 +220,7 @@
 export default {
   data() {
     return {
+      form: {},
       text1: '',
       text2: '',
       text3: '',
@@ -160,6 +231,8 @@ export default {
       text8: '',
       radio: '',
       active: 0,
+      input: '',
+      activeNames: ['1'],
       steps: [
         {
           title: 'Step 1',
@@ -216,6 +289,9 @@ export default {
   methods: {
     handleClick(index) {
       this.active = index;
+    },
+    handleChange(val) {
+      console.log(val);
     },
   },
 };
