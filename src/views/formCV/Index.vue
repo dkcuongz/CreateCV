@@ -105,6 +105,48 @@
       steps 2
     </div>
     <div v-if="active === 1">step 2</div>
+    <div v-if="active === 10" class="uk-margin-top uk-flex uk-flex-center">
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-expand">
+              <h3 class="uk-card-title uk-margin-remove-bottom card-title">
+                履歴書の作成日を入力
+              </h3>
+              <p class="uk-text-meta uk-margin-remove-top">
+                実際に書類を持参する日、または郵送する日を選びましょう
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-center uk-margin-top">
+          <el-form label-position="top" label-width="100px" size="medium">
+            <el-button class="uk-width-1-1" size="large" :disabled="nowdisabled"
+              >今日の日付を入力</el-button
+            >
+            <br />
+            <el-button
+              class="uk-width-1-1 uk-margin-small-top"
+              size="large"
+              :disabled="tomodisabled"
+              >明日の日付を入力</el-button
+            >
+            <el-date-picker
+              v-model="date11"
+              type="date"
+              class="width-date uk-margin-small-top uk-margin-medium-bottom"
+              size="medium"
+            >
+            </el-date-picker>
+          </el-form>
+        </div>
+        <div class="el-card__footer uk-flex uk-flex-right" style="padding-top: 15px">
+          <el-button type="danger" @click="active += 1" class="button-submit"
+            >次へ <i class="el-icon-d-arrow-right"></i
+          ></el-button>
+        </div>
+      </el-card>
+    </div>
     <div v-if="active === 11" class="uk-margin-top uk-flex uk-flex-center">
       <div class=" uk-width-1-2">
         <div class="uk-card uk-card-default">
@@ -205,10 +247,10 @@
         <div class="text-right uk-margin-small">
           <div class="save-time-message"><span>最終保存：</span><span>6時間前</span></div>
         </div>
-        <div class="card-preview-button">
-          <el-button icon="el-icon-view" size="medium"> プレビュー</el-button>
-        </div>
       </div>
+    </div>
+    <div class="card-preview-button">
+      <el-button icon="el-icon-view" size="medium"> プレビュー</el-button>
     </div>
     <div class="uk-width-1-2 uk-margin-large-top uk-margin-bottom footer-cv">
       <div class="image-area"><ruby title="なまえをかえられるよ"> </ruby></div>
@@ -232,6 +274,9 @@ export default {
       radio: '',
       active: 0,
       input: '',
+      date11: '',
+      nowdisabled: true,
+      tomodisabled: false,
       activeNames: ['1'],
       steps: [
         {
@@ -293,6 +338,18 @@ export default {
     handleChange(val) {
       console.log(val);
     },
+    getCurrentDate() {
+      const currentDate = new Date();
+      console.log(currentDate);
+      const currentDateWithFormat = new Date()
+        .toJSON()
+        .slice(0, 10)
+        .replace(/-/g, '/');
+      return currentDateWithFormat;
+    },
+  },
+  mounted() {
+    this.getCurrentDate();
   },
 };
 </script>
